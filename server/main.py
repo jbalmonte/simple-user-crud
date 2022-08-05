@@ -1,6 +1,7 @@
 from typing import List
 from fastapi import FastAPI, Depends
 import models
+import uvicorn
 from services import get_all, get_one, create, update, destroy
 from sqlalchemy.orm import Session
 from database import engine, get_db
@@ -54,3 +55,7 @@ def add_user(id: int, request: UserSchema, db: Session = Depends(get_db)):
 @app.delete('/api/users/{id}')
 def delete_user(id: int, db: Session = Depends(get_db)):
     return destroy(id, db)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
