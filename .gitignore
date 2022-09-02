@@ -6,7 +6,7 @@ node_modules/
 .pnp.js
 
 # python
-venv/
+env/
 __pycache__/
 
 # testing
@@ -14,6 +14,7 @@ __pycache__/
 
 # production
 /build
+
 
 # misc
 .DS_Store
